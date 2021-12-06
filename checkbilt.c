@@ -20,16 +20,15 @@ int checkbuilt(char **arr)
 	{
 		case 0:
 			printf("hacer funcion env");
+			env_s();
 			return (1);
-			break;
 
 		case 1:
 			printf("hacer funcion exit");
+			exitb();
 			return (1);
-			break;
 
 		default:
 			return (0);
-			break;
 	}
 }

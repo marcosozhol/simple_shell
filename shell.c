@@ -8,7 +8,7 @@
  */
 int main(int argc, char **argv, char **env)
 {
-	int byte = 0, isat = 0, built = 0;
+	int byte = 0, isat = 0, built = 0, st = 1;
 	size_t size = 10;
 	char sep[] = "  \n";
 	char **arr, /***carpetas_path,*/ *cadena = NULL;
@@ -24,7 +24,7 @@ int main(int argc, char **argv, char **env)
 
 	isat = isatty(STDIN_FILENO);/*es interactivo?*/
 
-	while (1)
+	while (st == 1)
 	{
 		if (isat)
 			printf("$ ");
