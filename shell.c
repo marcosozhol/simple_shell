@@ -8,7 +8,7 @@
  */
 int main(int argc, char **argv, char **env)
 {
-	int byte, isat;
+	int byte = 0, isat = 0, built = 0;
 	size_t size = 10;
 	char sep[] = "  \n";
 	char **arr, /***carpetas_path,*/ *cadena = NULL;
@@ -38,11 +38,11 @@ int main(int argc, char **argv, char **env)
 		}
 
 		arr = tokeni(cadena, sep);
-		/**
-		 * funcion de chequear si es un built-in
-		 */
 
-		eject(arr);
+		built = checkbuilt(arr);
+
+		if (built == 0)
+			eject(arr);
 
 		if (feof(stdin))
 		{
