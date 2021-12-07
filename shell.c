@@ -8,7 +8,7 @@
  */
 int main(int argc, char **argv, char **env)
 {
-	int byte = 0, isat = 0, built = 0, st = 1;
+	int byte = 0, isat = 0, built = 0, st = 1, i = 0;
 	size_t size = 10;
 	char sep[] = "  \n";
 	char **arr, /***carpetas_path,*/ *cadena = NULL;
@@ -17,10 +17,9 @@ int main(int argc, char **argv, char **env)
 	(void)env;
 
 	isat = 1;
-	/**
-	 * carpetas_path = malloc(1024);
-	 *carpetas_path = _getpath("PATH=", env);
-	 */
+
+	/*carpetas_path = malloc(1024);*/
+	/***carpetas_path = _getpath("PATH=", env);*/
 
 	isat = isatty(STDIN_FILENO);/*es interactivo?*/
 
@@ -48,8 +47,13 @@ int main(int argc, char **argv, char **env)
 		{
 			break;
 		}
+	while (arr[i])
+	{
+		free(arr[i]);
+		i++;
+	}
+	free(arr);
 	}
 	free(cadena);
-	free(arr);
 	return (0);
 }

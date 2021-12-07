@@ -7,7 +7,7 @@
 int checkbuilt(char **arr)
 {
 	char *builts[] = {"env", "exit", NULL};
-	int i = 0;
+	int i = 0, x = 0;
 
 	for (i = 0; builts[i] != NULL; i++)
 	{
@@ -25,6 +25,12 @@ int checkbuilt(char **arr)
 
 		case 1:
 			printf("hacer funcion exit");
+			while (arr[x])
+			{
+				free(arr[x]);
+				x++;
+			}
+			free(arr);
 			exitb();
 			return (1);
 

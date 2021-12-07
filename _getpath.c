@@ -2,11 +2,11 @@
 /**
  *_getpath - extrae el path
  *@name: nombre de la variable de entorno "path"
- *@env: variable de entorno
+ *@environ: variable de entorno
  *Return: contenido de la variable de entrono
  *
  */
-char _getpath(const char *name, char **env)
+char _getpath(const char *name, char **environ)
 {
 	char *buff = NULL;
 	char **path = NULL;
@@ -17,10 +17,10 @@ char _getpath(const char *name, char **env)
 	char *dobstr = strdup(name);
 	/*name = "PATH=";*/
 
-	while (env[i] != NULL)
+	while (environ[i] != NULL)
 	{
 
-		buff = strstr(env[i], dobstr);
+		buff = strstr(environ[i], dobstr);
 		path = tokeni(buff, "=");
 		str = path[1];
 	}
