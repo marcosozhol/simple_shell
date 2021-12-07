@@ -7,7 +7,7 @@
 int exitb(void)
 {
 	printf("llegaste\n");
-	exit(2);
+	return (2);
 }
 
 /**

@@ -8,7 +8,6 @@ void eject(char **arr)
 {
 	int ejecucion;
 	pid_t subproceso;
-	int i = 0;
 
 	subproceso = fork();
 
@@ -25,13 +24,6 @@ void eject(char **arr)
 		{
 			perror("Error");
 		}
-		while (arr[i])
-		{
-			free(arr[i]);
-			i++;
-		}
-		free(arr);
-		exit(0);
 	}
 	else
 	{
