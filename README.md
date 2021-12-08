@@ -71,30 +71,28 @@ To exit the program, run:
 # List of functions :page_facing_up:
 | Function Name | Description |
 |---------------- | -----------|
-|[func_exit](https://github.com/cbarros7/simple_shell/blob/master/built-ins.c)    | Exit the shell.|
-|[func_printenv](https://github.com/cbarros7/simple_shell/blob/master/built-ins.c) | Prints the current environment.|
-|[read_input](https://github.com/cbarros7/simple_shell/blob/master/loop_functions.c) | Stores whatever is passed to it as standard input. |
-|[sparse_str](https://github.com/cbarros7/simple_shell/blob/master/loop_functions.c) | Devides a string into and array of strings. |
-|[execute](https://github.com/cbarros7/simple_shell/blob/master/loop_functions.c) | Executes a command that is passed to it as the first aguement. |
-|[prompt](https://github.com/cbarros7/simple_shell/blob/master/loop_functions.c) | Prints '$' and waits for a user's input. |
-|[_getenv](https://github.com/cbarros7/simple_shell/blob/master/loop_sub_functions.c) | Provides the value of the environment passed to it as arguement. |
-|[_which](https://github.com/cbarros7/simple_shell/blob/master/loop_sub_functions.c) | Identifies the path of the command(\*args) that is being passed. |
-|[child_process](https://github.com/cbarros7/simple_shell/blob/master/loop_sub_functions.c) | Executes a command if the path of it is an executable file. |
-|[search_func](https://github.com/cbarros7/simple_shell/blob/master/loop_sub_functions.c) | Search directory. |
-|[_realloc](https://github.com/cbarros7/simple_shell/blob/master/memory.c) | Reallocates a space in memory. |
-|[_count_point](https://github.com/cbarros7/simple_shell/blob/master/memory.c) | Memory buffer. |
-|[handle_signal](https://github.com/cbarros7/simple_shell/blob/master/signals.c) | Prints new line and prompt when CTRL + C is passed as input. |
-|[_stat](https://github.com/cbarros7/simple_shell/blob/master/signals.c) | Displays file or file system status. |
-|[_strstr](https://github.com/cbarros7/simple_shell/blob/master/str_func.c) | Locates a substring. |
-|[_strlen](https://github.com/cbarros7/simple_shell/blob/master/str_func.c) | Returns a string. |
-|[_strcpy](https://github.com/cbarros7/simple_shell/blob/master/str_func.c) | Copies a string pointed to by src to dest. |
-|[_strcat](https://github.com/cbarros7/simple_shell/blob/master/str_func.c) | Concatenates two strings. |
-|[_strcmp](https://github.com/cbarros7/simple_shell/blob/master/str_func.c) | Compare two strings. |
-|[_strdup](https://github.com/cbarros7/simple_shell/blob/master/str_func_2.c) | Copies a string to another. |
+|```func_exit```     | Exit the shell.|
+|```func_printenv``` | Prints the current environment.|
+|```read_input``` | Stores whatever is passed to it as standard input. |
+|```sparse_str``` | Devides a string into and array of strings. |
+|```execute``` | Executes a command that is passed to it as the first aguement. |
+|```prompt```  | Prints '$' and waits for a user's input. |
+|```_getenv``` | Provides the value of the environment passed to it as arguement. |
+|```_which``` | Identifies the path of the command(\*args) that is being passed. |
+|```child_process``` | Executes a command if the path of it is an executable file. |
+|```search_func``` | Search directory. |
+|```_realloc``` | Reallocates a space in memory. |
+|```_count_point```  | Memory buffer. |
+|```handle_signal``` | Prints new line and prompt when CTRL + C is passed as input. |
+|```_stat``` | Displays file or file system status. |
+|```_strstr``` | Locates a substring. |
+|```_strlen``` | Returns a string. |
+|```_strcpy``` | Copies a string pointed to by src to dest. |
+|```_strcat``` | Concatenates two strings. |
+|```_strcmp``` | Compare two strings. |
+|```_strdup``` | Copies a string to another. |
 ## Syntax :notebook_with_decorative_cover:
-**Mr. Robot** the user can have the experience in an interactive and non-interactive way. On the one hand, if it is invoked with a standard input that is not connected to the terminal, *Mr. Robot* reads and executes the received commands in order.
-To use the **Mr. Robot** interactive mode use isatty(3). Immediately the user will see a warning $ indicating that our shell is ready to read the command.
-On the other hand, in non-interactive mode the user will enter command line arguments, so **Mr. Robot** treats the first argument as a file from which to read the commands.
+**Simple_Shell** the user can have the experience in an interactive and non-interactive way. On the one hand, if it is invoked with a standard input that is not connected to the terminal, *Simple_Shell* reads and executes the received commands in order.
 In interactive mode, you can type commands from the keyboard:
 Example:
 ```
@@ -108,28 +106,17 @@ Example:
 $ echo "/bin/ls" | ./hsh
 $ cat file_name | ./hsh
 ```
-You can use the same syntax for running commands in other shells:
-```
-<command> <flags or options> <argument 1> <argument 2> ...
-```
-In non-interactive mode:
-```
-<command> | ./hsh
-```
-## Built-Ins  :hammer:
-The following built-ins are supported by the *Mr. Robot*:
+The following built-ins are supported by the *Simple_Shell*:
   
 + ```env``` - Print the current environment
 + ```exit``` - exit program sucessfully
 ## Return :clap:
-**Mr. Robot** returns zero indicating success and non-zero indicanting failure.
-## Bugs :loudspeaker:
-No known bugs.
+**Simple_Shell** returns zero indicating success and non-zero indicanting failure.
 ## Annotations :loudspeaker:
 We have written an [**article**](https://www.linkedin.com/pulse/ls-l-command-understanding-what-happens-shell-carlos-barros/) in which we deepen the internal processes within the shell by typing the command "ls -l". We talk about fundamental elements such as the PATH, and conclude with the permission structure with some examples. 
 ## Authors :black_nib:
-* **Carlos Barros** [Github](https://github.com/cbarros7)
-* **Andrew Kalil** [Github](https://github.com/AndrewKalil)
+* **Agustin Guarteche** [Github](https://github.com/ElWecho)
+* **Marco Sozaro** [Github](https://github.com/marcosozhol)
 ## Acknowledgements :pray:
 Thanks to all the software engineers, peers from different cohorts of the Holberton School, for all the learning that we have been able to acquire in this academic period culminating in this shell emulation. 
 For more information about Holberton, visit this [link](https://www.holbertonschool.com/).
