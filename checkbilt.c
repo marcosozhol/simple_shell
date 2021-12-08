@@ -19,12 +19,10 @@ int checkbuilt(char **arr)
 	switch (i)
 	{
 		case 0:
-			printf("hacer funcion env");
 			env_s();
 			return (1);
 
 		case 1:
-			printf("hacer funcion exit");
 			return (2);
 
 		default:
