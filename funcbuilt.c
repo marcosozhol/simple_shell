@@ -6,7 +6,6 @@
  */
 int exitb(void)
 {
-	printf("llegaste\n");
 	return (2);
 }
 

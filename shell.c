@@ -1,46 +1,33 @@
 #include "main.h"
 /**
  *main - simple shell
- *@argc: count of arguments
- *@argv: vector of arguments
- *@env: enviroment var
  *Return: 0
  */
-int main(int argc, char **argv, char **env)
+int main(void)
 {
-	int byte = 0, isat = 0, built = 0, st = 1;
+	int byte = 0, isat = 0, built = 0, st = 1; /*x = 0*/
 	size_t size = 10;
 	char sep[] = "  \n";
-	char **arr, /***carpetas_path,*/ *cadena = NULL;
-	(void)argc;
-	(void)argv;
-	(void)env;
+	char **arr, *cadena = NULL, **tmp = NULL;/*PATH para funcion _getpath*/
 
 	isat = 1;
-	/**
-	 * carpetas_path = malloc(1024);
-	 *carpetas_path = _getpath("PATH=", env);
-	 */
-
 	isat = isatty(STDIN_FILENO);/*es interactivo?*/
 
 	while (st == 1)
 	{
 		if (isat)
-			printf("$ ");
+			_puts("$ ");
+
 		byte = getline(&cadena, &size, stdin);
 
 		if (byte == -1)
 		{
-			putchar('\n');
+			_putchar('\n');
 			free(cadena);
 			return (-1);
 		}
-
 		arr = tokeni(cadena, sep);
-
 		built = checkbuilt(arr);
-
 		if (built == 0)
 			eject(arr);
 		if (built == 2)
@@ -48,7 +35,6 @@ int main(int argc, char **argv, char **env)
 			free(arr);
 			break;
 		}
-
 		if (feof(stdin))
 		{
 			break;
@@ -56,5 +42,6 @@ int main(int argc, char **argv, char **env)
 		free(arr);
 	}
 	free(cadena);
+	free(tmp);
 	return (0);
 }
