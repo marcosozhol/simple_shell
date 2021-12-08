@@ -113,7 +113,7 @@ The following built-ins are supported by the *Simple_Shell*:
 ## Return :clap:
 **Simple_Shell** returns zero indicating success and non-zero indicanting failure.
 ## Annotations :loudspeaker:
-We have written an [**article**](https://www.linkedin.com/pulse/ls-l-command-understanding-what-happens-shell-carlos-barros/) in which we deepen the internal processes within the shell by typing the command "ls -l". We talk about fundamental elements such as the PATH, and conclude with the permission structure with some examples. 
+We have written an [**article**](https://www.linkedin.com/pulse/what-happens-when-you-type-ls-l-c-shell-agustin-guarteche) in which we deepen the internal processes within the shell by typing the command "ls -l". We talk about fundamental elements such as the PATH, and conclude with the permission structure with some examples. 
 ## Authors :black_nib:
 * **Agustin Guarteche** [Github](https://github.com/ElWecho)
 * **Marco Sozaro** [Github](https://github.com/marcosozhol)
@@ -122,4 +122,4 @@ Thanks to all the software engineers, peers from different cohorts of the Holber
 For more information about Holberton, visit this [link](https://www.holbertonschool.com/).
 <p align="center">
 <img src="http://www.holbertonschool.com/holberton-logo.png" alt="Holberton School logo">
-</p>
+</p
