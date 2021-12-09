@@ -1,0 +1,54 @@
+.TH hsh "12/08/2021" "1.0" "hsh Manual"
+
+.SH NAME
+
+Simple_Shell
+- executable file: hsh
+
+.SH SYNOPSIS
+
+- This program interprets and executes command line arguments read from standard input.
+this version can only be executed by calling the path before, example: / bin / ls.
+.PP
+You can also run in non-interactive mode:
+
+.B echo "ls" | ./hsh
+
+.SH DESCRIPTION
+
+.PP
+
+Simple_Shell is an sh-compatible command language interpreter that executes commands read from the standard input.
+
+.SH OPTIONS
+
+.RS
+.nf
+- env -  Prints enviroment.
+- exit -  Exit Simple_Shell.
+- Ctl D - Exit Simple_Shell.
+- /bin/"command" - execute a sh command. For example: ls, pwd, etc.
+.RE
+
+.SH EXAMPLES
+
+.PP
+echo "ls" | ./hsh
+.PP
+Output: show all the files on the working directory
+.PP
+echo "./test" | ./hsh
+.PP
+ Output: Execute test file from working directory
+.PP
+echo "env" | ./hsh
+.PP
+Output: Print Enviroment
+
+.B Return value
+
+On success, hsh returns 0. On error returns -1
+
+.SH AUTHORS
+
+Agustin Guarteche and Marco Sozaro
