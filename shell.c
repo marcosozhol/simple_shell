@@ -6,7 +6,7 @@
 int main(void)
 {
 	int isat = 0, built = 0, st = 1; /*x = 0*/
-	char sep[] = "  \n"; /*separador para tokenizacion*/
+	char sep[] = " \n\t"; /*separador para tokenizacion*/
 	char **arr, **tmp = NULL;/*PATH para funcion _getpath*/
 	char *cadena = NULL;
 
@@ -21,6 +21,8 @@ int main(void)
 		cadena = lectura();
 
 		arr = tokeni(cadena, sep);
+		if (arr[0] == NULL)
+			continue;
 		built = checkbuilt(arr);
 		if (built == 0)
 			eject(arr);
