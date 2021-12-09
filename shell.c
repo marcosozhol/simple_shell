@@ -7,7 +7,7 @@ int main(void)
 {
 	int byte = 0, isat = 0, built = 0, st = 1; /*x = 0*/
 	size_t size = 10;
-	char sep[] = "  \n";
+	char sep[] = "  \n"; /*separador para tokenizacion*/
 	char **arr, *cadena = NULL, **tmp = NULL;/*PATH para funcion _getpath*/
 
 	isat = 1;
