@@ -5,10 +5,10 @@
  */
 int main(void)
 {
-	int byte = 0, isat = 0, built = 0, st = 1; /*x = 0*/
-	size_t size = 10;
+	int isat = 0, built = 0, st = 1; /*x = 0*/
 	char sep[] = "  \n"; /*separador para tokenizacion*/
-	char **arr, *cadena = NULL, **tmp = NULL;/*PATH para funcion _getpath*/
+	char **arr, **tmp = NULL;/*PATH para funcion _getpath*/
+	char *cadena = NULL;
 
 	isat = 1;
 	isat = isatty(STDIN_FILENO);/*es interactivo?*/
@@ -16,16 +16,10 @@ int main(void)
 	while (st == 1)
 	{
 		if (isat)
-			_puts("$ ");
+			write(1, "$ ", 3);
 
-		byte = getline(&cadena, &size, stdin);
+		cadena = lectura();
 
-		if (byte == -1)
-		{
-			_putchar('\n');
-			free(cadena);
-			return (-1);
-		}
 		arr = tokeni(cadena, sep);
 		built = checkbuilt(arr);
 		if (built == 0)

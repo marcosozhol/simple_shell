@@ -20,7 +20,7 @@ int exitb(void);
 int env_s(void);
 void _puts(char *str);
 int _putchar(char c);
-
+char *lectura(void);
 char *testear(char *str);
 
 #endif
