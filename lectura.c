@@ -6,12 +6,12 @@
 char *lectura(void)
 {
 	char *cadena = NULL;
-	size_t byte = 0;
+	int byte = 0;
 	size_t size = 0;
 
 	byte = getline(&cadena, &size, stdin);
 
-	if ((int)byte == -1)
+	if (byte == -1)
 	{
 		free(cadena);
 		if (feof(stdin))

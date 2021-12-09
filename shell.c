@@ -22,7 +22,10 @@ int main(void)
 
 		arr = tokeni(cadena, sep);
 		if (arr[0] == NULL)
+		{
+			free(arr);
 			continue;
+		}
 		built = checkbuilt(arr);
 		if (built == 0)
 			eject(arr);
@@ -36,6 +39,7 @@ int main(void)
 			break;
 		}
 		free(arr);
+		free(cadena);
 	}
 	free(cadena);
 	free(tmp);
